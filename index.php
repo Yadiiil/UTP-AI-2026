@@ -16,18 +16,33 @@ if (isset($_POST['cek_ai'])) {
 require_once 'layout/web_header.php'; 
 ?>
 <div class="card p-4 mb-4 bg-secondary bg-opacity-10 border-0">
-    <h5 class="fw-bold"><i class="bi bi-robot me-2"></i>AI Racket Finder</h5>
+    <h5 class="fw-bold"><i class="bi bi-search me-2"></i>Racket Selector</h5>
+    
     <form method="POST" class="row g-2">
-        <div class="col-md-5"><select name="lapangan" class="form-select"><option value="Hard">Hard Court</option><option value="Padel">Padel Court</option></select></div>
-        <div class="col-md-5"><select name="level" class="form-select"><option value="Pemula">Pemula</option><option value="Pro">Pro</option></select></div>
-        <div class="col-md-2"><button name="cek_ai" class="btn btn-primary w-100">Cek</button></div>
+        <div class="col-md-5">
+            <label class="small text-secondary">Jenis Lapangan</label>
+            <select name="lapangan" class="form-select">
+                <option value="Hard">Hard Court</option>
+                <option value="Padel">Padel Court</option>
+            </select>
+        </div>
+        <div class="col-md-5">
+            <label class="small text-secondary">Level Kemampuan</label>
+            <select name="level" class="form-select">
+                <option value="Pemula">Pemula</option>
+                <option value="Pro">Pro</option>
+            </select>
+        </div>
+        <div class="col-md-2 d-flex align-items-end">
+            <button name="cek_ai" class="btn btn-primary w-100">Cari Raket</button>
+        </div>
     </form>
-    <?php if($rekomendasi): ?><div class="alert alert-info mt-3"><?= $rekomendasi ?></div><?php endif; ?>
-</div>
 
-<div class="d-flex justify-content-between mb-3">
-    <h4>Katalog Produk</h4>
-    <a href="tambah.php" class="btn btn-primary text-white">Tambah Produk</a>
+    <?php if($rekomendasi): ?>
+        <div class="alert alert-success mt-3 border-0 shadow-sm">
+            <i class="bi bi-check-circle-fill me-2"></i><?= $rekomendasi ?>
+        </div>
+    <?php endif; ?>
 </div>
 
 <table class="table table-hover align-middle mb-0">
