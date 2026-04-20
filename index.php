@@ -30,17 +30,26 @@ require_once 'layout/web_header.php';
     <a href="tambah.php" class="btn btn-primary">Tambah</a>
 </div>
 
-<table class="table table-hover">
-    <thead class="table-dark"><tr><th>Nama</th><th>Kategori</th><th>Harga</th><th>Aksi</th></tr></thead>
+<table class="table table-hover align-middle mb-0">
+    <thead class="table-dark">
+        <tr>
+            <th class="ps-4">Nama Produk</th>
+            <th>Kategori</th>
+            <th>Harga</th>
+            <th class="text-center">Stok</th>
+            <th class="text-center">Aksi</th>
+        </tr>
+    </thead>
     <tbody>
         <?php while($row = $produk->fetch_assoc()): ?>
         <tr>
-            <td><?= $row['nama_produk'] ?></td>
-            <td><?= $row['kategori'] ?></td>
+            <td class="ps-4 fw-semibold"><?= $row['nama_produk'] ?></td>
+            <td><span class="badge bg-info text-dark"><?= $row['kategori'] ?></span></td>
             <td>Rp <?= number_format($row['harga']) ?></td>
-            <td>
-                <a href="edit.php?id=<?= $row['id'] ?>" class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i></a>
-                <a href="hapus.php?id=<?= $row['id'] ?>" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></a>
+            <td class="text-center"><?= $row['stok'] ?></td>
+            <td class="text-center">
+                <a href="edit.php?id=<?= $row['id'] ?>" class="btn btn-sm btn-outline-light rounded-circle"><i class="bi bi-pencil"></i></a>
+                <a href="hapus.php?id=<?= $row['id'] ?>" class="btn btn-sm btn-outline-danger rounded-circle"><i class="bi bi-trash"></i></a>
             </td>
         </tr>
         <?php endwhile; ?>
