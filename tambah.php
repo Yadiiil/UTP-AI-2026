@@ -32,7 +32,14 @@ require_once 'layout/web_header.php';
                     <input type="number" name="stok" class="form-control" required>
                 </div>
             </div>
-            <button name="save" class="btn btn-primary w-100 py-2 mt-2 fw-bold">Simpan Produk</button>
+        <div class="row g-2 mt-2">
+    <div class="col-8">
+        <button name="save" class="btn btn-primary w-100 py-2 fw-bold">Simpan Produk</button>
+    </div>
+    <div class="col-4">
+        <a href="index.php" class="btn btn-outline-secondary w-100 py-2">Batal</a>
+    </div>
+</div>
         </form>
     </div>
 </div>
