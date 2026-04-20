@@ -27,7 +27,7 @@ require_once 'layout/web_header.php';
 
 <div class="d-flex justify-content-between mb-3">
     <h4>Katalog Produk</h4>
-    <a href="tambah.php" class="btn btn-primary">Tambah</a>
+    <a href="tambah.php" class="btn btn-primary text-white">Tambah Produk</a>
 </div>
 
 <table class="table table-hover align-middle mb-0">
@@ -48,7 +48,7 @@ require_once 'layout/web_header.php';
             <td>Rp <?= number_format($row['harga']) ?></td>
             <td class="text-center"><?= $row['stok'] ?></td>
             <td class="text-center">
-                <a href="edit.php?id=<?= $row['id'] ?>" class="btn btn-sm btn-outline-light rounded-circle"><i class="bi bi-pencil"></i></a>
+                <a href="edit.php?id=<?= $row['id'] ?>" class="btn btn-sm btn-outline-warning rounded-circle"><i class="bi bi-pencil"></i></a>
                 <a href="hapus.php?id=<?= $row['id'] ?>" class="btn btn-sm btn-outline-danger rounded-circle"><i class="bi bi-trash"></i></a>
             </td>
         </tr>
