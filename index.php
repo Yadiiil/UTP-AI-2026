@@ -45,6 +45,13 @@ require_once 'layout/web_header.php';
     <?php endif; ?>
 </div>
 
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h4 class="fw-bold">Katalog Produk</h4>
+    <a href="tambah.php" class="btn btn-primary px-4 rounded-pill fw-bold">
+        <i class="bi bi-plus-lg me-2"></i>Tambah Produk
+    </a>
+</div>
+
 <table class="table table-hover align-middle mb-0">
     <thead class="table-dark">
         <tr>
@@ -64,7 +71,7 @@ require_once 'layout/web_header.php';
             <td class="text-center"><?= $row['stok'] ?></td>
             <td class="text-center">
                 <a href="edit.php?id=<?= $row['id'] ?>" class="btn btn-sm btn-outline-warning rounded-circle"><i class="bi bi-pencil"></i></a>
-                <a href="hapus.php?id=<?= $row['id'] ?>" class="btn btn-sm btn-outline-danger rounded-circle"><i class="bi bi-trash"></i></a>
+                <a href="hapus.php?id=<?= $row['id'] ?>" class="btn btn-sm btn-outline-danger rounded-circle" onclick="return confirm('Yakin hapus?')"><i class="bi bi-trash"></i></a>
             </td>
         </tr>
         <?php endwhile; ?>
